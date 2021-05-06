@@ -1,5 +1,6 @@
 package com.mycompany.myapp.controller;
 
+import com.mycompany.myapp.config.Conf02;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,9 +16,12 @@ public class MainController {
     @Autowired
     ServletContext servletContext;
 
+    @Autowired
+    Conf02 conf02;
+
     @GetMapping("/")
-    String test01(Model model){
-        model.addAttribute("var01",servletContext.getRealPath("/WEB-INF/myDIR/"));
+    String test01(Model model) {
+        model.addAttribute("var01", conf02.getMyDirLocationFromConf01());
         return "test";
     }
 }
