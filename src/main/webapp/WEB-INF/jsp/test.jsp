@@ -5,6 +5,8 @@
     <title></title>
 </head>
 <body>
+<a href="${pageContext.request.contextPath}/ajax/">ajax test</a>
+
 <p>${var01}</p>
 </body>
 </html>

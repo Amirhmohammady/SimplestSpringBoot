@@ -23,4 +23,9 @@ public class MainController {
         model.addAttribute("var01", conf02.getMyDirLocationFromConf01() + "\n" + val02);
         return "test";
     }
+
+    @GetMapping("/ajax")
+    String ajax01() {
+        return "ajax_test";
+    }
 }
