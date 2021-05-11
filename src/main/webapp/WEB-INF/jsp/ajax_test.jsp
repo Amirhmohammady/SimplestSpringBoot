@@ -12,8 +12,9 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("demo").innerHTML =
-                        this.responseText;
+                let obj01 = JSON.parse(this.responseText);
+                if (obj01[0].isPassCorrect == true)
+                document.getElementById("demo").innerHTML = obj01[0].message;
             }
         };
         xhttp.open("GET", "${pageContext.request.contextPath}/ajaxrequest", true);

@@ -20,7 +20,7 @@ public class MainController {
 
     @GetMapping("/")
     String test01(Model model) {
-        model.addAttribute("var01", conf02.getMyDirLocationFromConf01() + "\n" + val02);
+        model.addAttribute("var01", conf02.getMyDirLocationFromConf01() + "    " + val02);
         return "test";
     }
 
