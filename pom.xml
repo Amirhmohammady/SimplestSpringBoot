@@ -8,8 +8,8 @@
     <artifactId>TestSpringBoot</artifactId>
     <version>1.0.2-SNAPSHOT</version>
 
-    <!--<packaging>war</packaging>-->
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
+    <!--<packaging>jar</packaging>-->
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -20,26 +20,26 @@
 
     <build>
         <plugins>
-<!--            <plugin>
+            <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
-            </plugin>-->
-            <plugin>
-                <!--Create an Executable JAR-->
+            </plugin>
+            <!--<plugin>
+                &lt;!&ndash;Create an Executable JAR&ndash;&gt;
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <!--<version>2.1.9.RELEASE</version>-->
-                <!--If you do not use the parent POM-->
-<!--                <executions>
+                &lt;!&ndash;<version>2.1.9.RELEASE</version>&ndash;&gt;
+                &lt;!&ndash;If you do not use the parent POM&ndash;&gt;
+&lt;!&ndash;                <executions>
                     <execution>
                         <goals>
                             <goal>repackage</goal>
                         </goals>
                     </execution>
-                </executions>-->
-            </plugin>
+                </executions>&ndash;&gt;
+            </plugin>-->
         </plugins>
     </build>
 
@@ -50,25 +50,26 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <!--<version>2.1.9.RELEASE</version>-->
             <!--for removing tomcat in war file-->
-<!--            <exclusions>
+            <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-tomcat</artifactId>
                 </exclusion>
-            </exclusions>-->
+            </exclusions>
         </dependency>
         <!--embedded tomcat-->
-        <dependency>
+<!--        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>provided</scope>
-        </dependency>
-<!--        <dependency>
+        </dependency>-->
+        <!--import javax.servlet.ServletContext;-->
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <version>2.3</version>
             <scope>provided</scope>
-        </dependency>-->
+        </dependency>
 <!--        <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
