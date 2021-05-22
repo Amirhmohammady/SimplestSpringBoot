@@ -1,5 +1,6 @@
 package com.mycompany.myapp.controller;
 
+import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,10 +25,12 @@ public class AjaxRestController {
         List<JSONObject> entities = new ArrayList<JSONObject>();
         JSONObject json = new JSONObject();
         //json.put("111","aaa");
-/*
-        json.put("isPassCorrect", true);
-        json.put("message", "bbb");
-*/
+        try {
+            json.put("isPassCorrect", true);
+            json.put("message", "bbb");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         entities.add(json);
         return new ResponseEntity<Object>(entities.toString(), HttpStatus.OK);
     }

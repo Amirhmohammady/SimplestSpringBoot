@@ -17,11 +17,7 @@
                 document.getElementById("demo").innerHTML = obj01[0].message;
             }
         };
-        xhttp.open("GET", "${pageContext.request.contextPath}/ajaxrequest", true);
-		<%-- ${request.contextPath}
-		${req.requestURL}
-		${object.linkUrl}
-		${pageContext.request.contextPath} --%>
+        xhttp.open("GET", "[[@{/ajaxrequest/}]]", true);
         xhttp.send();
     }
 </script>

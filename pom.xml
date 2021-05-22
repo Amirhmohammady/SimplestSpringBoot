@@ -57,6 +57,7 @@
                 </exclusion>
             </exclusions>-->
         </dependency>
+        <!--embedded tomcat-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
@@ -73,6 +74,11 @@
             <artifactId>json</artifactId>
             <version>20210307</version>
         </dependency>-->
+        <!-- Need this to compile and render thymeleaf pages -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
         <!-- configurationprocessor.json.JSONObject -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -86,10 +92,10 @@
             <version>1.2</version>
         </dependency>-->
         <!-- Need this to compile and render JSP pages -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
-            <!--<version>9.0.41</version>-->
+            &lt;!&ndash;<version>9.0.41</version>&ndash;&gt;
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -97,8 +103,7 @@
             <artifactId>ecj</artifactId>
             <version>4.6.1</version>
             <scope>provided</scope>
-        </dependency>
-
+        </dependency>-->
     </dependencies>
 
 </project>
