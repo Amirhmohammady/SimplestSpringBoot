@@ -26,6 +26,36 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.heroku.sdk</groupId>
+                <artifactId>heroku-maven-plugin</artifactId>
+                <version>3.0.3</version>
+                <configuration>
+                    <appName>advertise01</appName>
+                </configuration>
+            </plugin>
+            <!-- webapp-runner.jar for running the app -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.8</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals><goal>copy</goal></goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.github.jsimone</groupId>
+                                    <artifactId>webapp-runner</artifactId>
+                                    <version>8.5.11.2</version>
+                                    <destFileName>webapp-runner.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <!--<plugin>
                 &lt;!&ndash;Create an Executable JAR&ndash;&gt;
                 <groupId>org.springframework.boot</groupId>
@@ -58,11 +88,11 @@
             </exclusions>
         </dependency>
         <!--embedded tomcat-->
-<!--        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
-        </dependency>-->
+        <!--        <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                    <scope>provided</scope>
+                </dependency>-->
         <!--import javax.servlet.ServletContext;-->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -70,11 +100,11 @@
             <version>2.3</version>
             <scope>provided</scope>
         </dependency>
-<!--        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20210307</version>
-        </dependency>-->
+        <!--        <dependency>
+                    <groupId>org.json</groupId>
+                    <artifactId>json</artifactId>
+                    <version>20210307</version>
+                </dependency>-->
         <!-- Need this to compile and render thymeleaf pages -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -87,11 +117,11 @@
             <version>2.4.5</version>
         </dependency>
         <!-- Need this to JSTL tags support  -->
-<!--        <dependency>
-            <groupId>javax.servlet.jsp.jstl</groupId>
-            <artifactId>jstl-api</artifactId>
-            <version>1.2</version>
-        </dependency>-->
+        <!--        <dependency>
+                    <groupId>javax.servlet.jsp.jstl</groupId>
+                    <artifactId>jstl-api</artifactId>
+                    <version>1.2</version>
+                </dependency>-->
         <!-- Need this to compile and render JSP pages -->
         <!--<dependency>
             <groupId>org.apache.tomcat.embed</groupId>
