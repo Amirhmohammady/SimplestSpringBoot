@@ -51,7 +51,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         if (session != null) request.getSession().setAttribute(LAST_USERNAME_KEY, lastphonenumber);
                         request.getRequestDispatcher("login_fail").forward(request, response);
                     }
-                }).loginPage("/login").permitAll().and()
+                }).loginPage("/login").permitAll().and().rememberMe().and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
         //without this logout not working
         http.csrf().disable();

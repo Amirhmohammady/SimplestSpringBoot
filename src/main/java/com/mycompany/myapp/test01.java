@@ -6,6 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+
 /**
  * Created by Amir on 4/12/2021.
  */
@@ -16,8 +19,15 @@ public class test01 extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(test01.class, args);
     }
+
     /*@Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application;
     }*/
+    @Override
+    public void onStartup(ServletContext servletContext) throws ServletException {
+        super.onStartup(servletContext);
+        //servletContext.sets
+        //...
+    }
 }
